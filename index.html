@@ -793,11 +793,22 @@
 		};
 		return fmt;
 	}
+	// document.getElementById('down_list').style
+
 	window.onload = function () {
 		document.getElementById("student_id").innerHTML = '										' + my_value.id + '										';
 		document.getElementById("student_name").innerHTML = '										' + my_value.name + '										';
 		document.getElementById("student_time").innerHTML = dateFormat("YYYY-mm-dd HH:MM:SS", new Date());
+		if (my_value.type == '0') {
+			document.getElementById("Qrcode_11_qrcodecanvas").src = 'green_code_in.png';
+			document.getElementById("in_or_out").innerHTML = '允许入校';
+		}
+		else {
+			document.getElementById("in_or_out").innerHTML = '允许出校';
+			document.getElementById("Qrcode_11_qrcodecanvas").src = 'green_code_out.png';
+		}
 	}
+
 </script>
 
 <body class="site_mobile_common">
@@ -869,8 +880,8 @@
 						<div class="plugin-allbox" plugin="[object Object]">
 							<div data-key="Qrcode_11" class="dplugin-box"
 								style="margin-top: 0px; margin-bottom: 0px; width: 100%; text-align: center; height: 100%; overflow-x: auto;">
-								<div class="dplugin-mobile"><img src="green_code.png" id="Qrcode_11_qrcodecanvas"
-										height="150" width="150" style="height: 150px; width: 150px;"></canvas></div>
+								<div class="dplugin-mobile"><img src="" id="Qrcode_11_qrcodecanvas" height="150"
+										width="150" style="height: 150px; width: 150px;"></canvas></div>
 							</div>
 							<!---->
 						</div>
@@ -886,8 +897,8 @@
 								style="margin-top: 0px; margin-bottom: 0px; text-align: center;">
 								<div class="dplugin-mobile dplugin-mobile-dinput dinput-vie dplugin-mobile-dinput-focusalert"
 									style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">
-									<span
-										style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;">允许入校</span>
+									<span id="in_or_out"
+										style="font-size: 18px; font-family: 微软雅黑; font-weight: bold; font-style: normal; color: green; text-decoration: none; text-align: center; line-height: 20px; letter-spacing: 0px;"></span>
 								</div>
 							</div>
 							<!---->
